@@ -1,0 +1,32 @@
+<section id="experience" class="experience">
+  <div class="section-heading">
+    <span>CAREER</span>
+    <h2>Professional Experience</h2>
+  </div>
+
+  <div class="timeline">
+    @for (job of experiences(); track job.company) {
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+
+        <div class="timeline-content">
+          <span class="duration">
+            {{ job.duration }}
+          </span>
+
+          <h3>{{ job.role }}</h3>
+
+          <h4>{{ job.company }}</h4>
+
+          <p>{{ job.location }}</p>
+
+          <ul>
+            @for (item of job.responsibilities; track item) {
+              <li>{{ item }}</li>
+            }
+          </ul>
+        </div>
+      </div>
+    }
+  </div>
+</section>

@@ -1,0 +1,33 @@
+<section id="skills" class="skills">
+  <div class="heading">
+    <span>MY SKILLS</span>
+
+    <h2>Technologies I Work With</h2>
+  </div>
+
+  <div class="skills-grid">
+    <!-- Frontend -->
+
+    <div class="skill-card">
+      <h3>Frontend</h3>
+
+      @for (skill of frontendSkills(); track skill) {
+        <div class="skill-item">
+          {{ skill }}
+        </div>
+      }
+    </div>
+
+    <!-- Tools -->
+
+    <div class="skill-card">
+      <h3>Tools</h3>
+
+      @for (skill of tools(); track skill) {
+        <div class="skill-item">
+          {{ skill }}
+        </div>
+      }
+    </div>
+  </div>
+</section>

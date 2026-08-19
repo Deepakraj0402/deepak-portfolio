@@ -1,0 +1,308 @@
+@use '../../../../styles/variables' as *;
+@use '../../../../styles/mixins' as *;
+
+.navbar {
+  position: sticky;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+
+  z-index: 1000;
+
+  background: rgba(15, 23, 42, 0.9);
+
+  backdrop-filter: blur(18px);
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.container {
+  @include container;
+
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  height: 80px;
+}
+
+/* =========================
+   LOGO
+========================= */
+
+.logo {
+  color: white;
+
+  font-size: 28px;
+
+  font-weight: 700;
+
+  text-decoration: none;
+
+  white-space: nowrap;
+}
+
+.logo span {
+  color: $primary;
+}
+
+/* =========================
+   DESKTOP MENU
+========================= */
+
+.desktop-menu {
+  display: flex;
+
+  align-items: center;
+
+  gap: 30px;
+}
+
+.desktop-menu a {
+  color: white;
+
+  text-decoration: none;
+
+  font-size: 16px;
+
+  transition: all 0.3s ease;
+}
+
+.desktop-menu a:hover {
+  color: $primary;
+}
+
+/* =========================
+   DESKTOP ACTIONS
+========================= */
+
+.actions {
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+}
+
+/* Common button styles */
+
+.resume-btn,
+.hire-btn {
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  padding: 10px 18px;
+
+  border-radius: 8px;
+
+  font-size: 15px;
+
+  text-decoration: none;
+
+  cursor: pointer;
+
+  transition: all 0.3s ease;
+}
+
+/* Resume */
+
+.resume-btn {
+  background: transparent;
+
+  border: 1px solid white;
+
+  color: white;
+}
+
+.resume-btn:hover {
+  background: white;
+
+  color: #0f172a;
+}
+
+/* Hire */
+
+.hire-btn {
+  background: $primary;
+
+  border: 1px solid $primary;
+
+  color: white;
+}
+
+.hire-btn:hover {
+  transform: translateY(-2px);
+
+  opacity: 0.9;
+}
+
+/* =========================
+   MOBILE MENU BUTTON
+========================= */
+
+.menu-btn {
+  display: none;
+
+  width: 44px;
+
+  height: 44px;
+
+  padding: 8px;
+
+  border: none;
+
+  background: transparent;
+
+  cursor: pointer;
+
+  flex-direction: column;
+
+  justify-content: center;
+
+  align-items: center;
+
+  gap: 5px;
+}
+
+.menu-btn span {
+  display: block;
+
+  width: 25px;
+
+  height: 2px;
+
+  background: white;
+
+  border-radius: 2px;
+
+  transition: all 0.3s ease;
+}
+
+/* =========================
+   MOBILE NAVIGATION
+========================= */
+
+.mobile-menu {
+  display: none;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 1100px) {
+  .desktop-menu {
+    gap: 20px;
+  }
+
+  .desktop-menu a {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 900px) {
+  .navbar {
+    position: sticky;
+  }
+
+  /* Hide desktop navigation */
+
+  .desktop-menu {
+    display: none;
+  }
+
+  .actions {
+    display: none;
+  }
+
+  /* Show hamburger */
+
+  .menu-btn {
+    display: flex;
+  }
+
+  /* Mobile menu */
+
+  .mobile-menu {
+    position: fixed;
+
+    top: 80px;
+
+    left: 0;
+
+    width: 100%;
+
+    z-index: 999;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 0;
+
+    padding: 15px 20px 25px;
+
+    background: rgba(15, 23, 42, 0.98);
+
+    backdrop-filter: blur(18px);
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.25);
+  }
+
+  .mobile-menu > a {
+    padding: 15px 10px;
+
+    color: white;
+
+    text-decoration: none;
+
+    font-size: 16px;
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+
+    transition: all 0.3s ease;
+  }
+
+  .mobile-menu > a:hover {
+    color: $primary;
+
+    padding-left: 16px;
+  }
+
+  /* Mobile buttons */
+
+  .mobile-actions {
+    display: flex;
+
+    gap: 12px;
+
+    margin-top: 20px;
+  }
+
+  .mobile-actions .resume-btn,
+  .mobile-actions .hire-btn {
+    flex: 1;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    width: 90%;
+  }
+
+  .logo {
+    font-size: 24px;
+  }
+
+  .mobile-actions {
+    flex-direction: column;
+  }
+}

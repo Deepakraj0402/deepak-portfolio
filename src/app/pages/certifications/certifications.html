@@ -1,0 +1,37 @@
+<section id="certifications" class="certifications">
+  <div class="container">
+    <div class="section-heading">
+      <span class="section-number">CERTIFICATIONS</span>
+
+      <p>Certifications and courses that have strengthened my technical and analytical skills.</p>
+    </div>
+
+    <div class="certifications-grid">
+      @for (cert of certifications; track cert.title) {
+        <div class="certification-card">
+          <div class="certification-icon">
+            {{ cert.icon }}
+          </div>
+
+          <div class="certification-content">
+            <span class="certification-year">
+              {{ cert.year }}
+            </span>
+
+            <h3>
+              {{ cert.title }}
+            </h3>
+
+            <h4>
+              {{ cert.issuer }}
+            </h4>
+
+            <p>
+              {{ cert.description }}
+            </p>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</section>

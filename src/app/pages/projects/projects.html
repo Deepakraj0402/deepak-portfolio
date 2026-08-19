@@ -1,0 +1,51 @@
+<section id="projects" class="projects">
+  <div class="section-title">
+    <span>MY PROJECTS</span>
+
+    <h2>Projects I Worked in</h2>
+  </div>
+
+  <div class="projects-container">
+    @for (project of projects(); track project.title) {
+      <div class="project-card">
+        <div class="project-header">
+          <div>
+            <h2>{{ project.title }}</h2>
+
+            <p class="company">
+              {{ project.company }}
+            </p>
+          </div>
+        </div>
+
+        <h4>
+          {{ project.role }}
+        </h4>
+
+        <p class="overview">
+          {{ project.overview }}
+        </p>
+
+        <h3>Key Responsibilities</h3>
+
+        <ul>
+          @for (item of project.responsibilities; track item) {
+            <li>
+              {{ item }}
+            </li>
+          }
+        </ul>
+
+        <h3>Technologies Used</h3>
+
+        <div class="tech-stack">
+          @for (tech of project.technologies; track tech) {
+            <span>
+              {{ tech }}
+            </span>
+          }
+        </div>
+      </div>
+    }
+  </div>
+</section>
