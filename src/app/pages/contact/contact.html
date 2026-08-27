@@ -40,26 +40,45 @@
       </div>
 
       <div class="social-links">
-        <a href="https://www.linkedin.com/in/deepak-raj-304962222/" target="_blank" rel="noopener noreferrer"
+        <a
+          href="https://www.linkedin.com/in/deepak-raj-304962222/"
+          target="_blank"
+          rel="noopener noreferrer"
           >🔗 LinkedIn
         </a>
 
-        <a href="https://github.com/Deepakraj0402" target="_blank" rel="noopener noreferrer">🔗 GitHub </a>
+        <a href="https://github.com/Deepakraj0402" target="_blank" rel="noopener noreferrer"
+          >🔗 GitHub
+        </a>
       </div>
     </div>
 
     <!-- Contact Form -->
 
-    <form class="contact-form">
-      <input type="text" placeholder="Your Name" />
+    <form class="contact-form" (submit)="sendEmail($event)">
+      <input type="text" name="name" placeholder="Your Name" required />
 
-      <input type="email" placeholder="Your Email" />
+      <input type="email" name="email" placeholder="Your Email" required />
 
-      <input type="text" placeholder="Subject" />
+      <input type="text" name="subject" placeholder="Subject" required />
 
-      <textarea rows="6" placeholder="Message"></textarea>
+      <textarea name="message" rows="6" placeholder="Message" required></textarea>
 
-      <button>Send Message</button>
+      <button type="submit" [disabled]="sending()">
+        @if (sending()) {
+          Sending...
+        } @else {
+          Send Message
+        }
+      </button>
     </form>
+
+    @if (successMessage()) {
+      <div class="success-message">✓ {{ successMessage() }}</div>
+    }
+
+    @if (errorMessage()) {
+      <div class="error-message">✕ {{ errorMessage() }}</div>
+    }
   </div>
 </section>
