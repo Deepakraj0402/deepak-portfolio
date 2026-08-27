@@ -1,6 +1,6 @@
 <section id="contact" class="contact">
   <div class="heading">
-    <span>CONTACT</span>
+    <span class="header-light">CONTACT</span>
 
     <h2>Get In Touch</h2>
 
@@ -13,16 +13,24 @@
     <div class="contact-info">
       <h3>Contact Information</h3>
 
-      <div class="info">
+      <div class="info copy-info" (click)="copyToClipboard('deepakselvam0402@gmail.com')">
         <strong>Email</strong>
 
         <p>deepakselvam0402&#64;gmail.com</p>
+
+        @if (copiedItem() === 'email') {
+          <span class="copied-message">✓ Copied!</span>
+        }
       </div>
 
-      <div class="info">
+      <div class="info copy-info" (click)="copyToClipboard('+91 9025074059')">
         <strong>Phone</strong>
 
         <p>+91 9025074059</p>
+
+        @if (copiedItem() === 'phone') {
+          <span class="copied-message">✓ Copied!</span>
+        }
       </div>
 
       <div class="info">
@@ -32,9 +40,11 @@
       </div>
 
       <div class="social-links">
-        <a href="www.linkedin.com" target="_blank"> LinkedIn </a>
+        <a href="https://www.linkedin.com/in/deepak-raj-304962222/" target="_blank" rel="noopener noreferrer"
+          >🔗 LinkedIn
+        </a>
 
-        <a href="https://github.com" target="_blank"> GitHub </a>
+        <a href="https://github.com/Deepakraj0402" target="_blank" rel="noopener noreferrer">🔗 GitHub </a>
       </div>
     </div>
 

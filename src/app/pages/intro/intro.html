@@ -1,0 +1,55 @@
+<section class="intro">
+  <!-- Animated background -->
+  <div class="background">
+    <div class="gradient gradient-one"></div>
+    <div class="gradient gradient-two"></div>
+    <div class="gradient gradient-three"></div>
+
+    <div class="grid"></div>
+
+    <div class="particles">
+      @for (particle of particles; track $index) {
+        <span
+          class="particle"
+          [style.left.%]="particle.x"
+          [style.top.%]="particle.y"
+          [style.animation-delay.s]="particle.delay"
+        >
+        </span>
+      }
+    </div>
+  </div>
+
+  <!-- Main content -->
+  <div class="intro-content">
+    <!-- Signature -->
+    <div class="signature-wrapper">
+      <div class="signature">
+        <span class="signature-text">Hey there...!!</span>
+      </div>
+    </div>
+
+    <!-- Message -->
+    <div class="intro-message">
+      <p class="eyebrow">Welcome to my digital space</p>
+
+      <h1>
+        Curious to know
+        <span>who's behind the code?</span>
+      </h1>
+    </div>
+
+    <!-- Button -->
+    <button class="start-button" type="button" (click)="startPortfolio()">
+      <span>GET STARTED</span>
+
+      <span class="arrow"> → </span>
+    </button>
+  </div>
+
+  <!-- Skip -->
+  <button class="skip-button" type="button" (click)="startPortfolio()">
+    Skip intro
+    <span>→</span>
+  </button>
+</section>

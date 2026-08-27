@@ -1,6 +1,7 @@
 import { Component, signal } from '@angular/core';
 
 interface Project {
+  image: any;
   title: string;
   company: string;
   role: string;
@@ -18,6 +19,7 @@ interface Project {
 export class Projects {
   projects = signal<Project[]>([
     {
+      image: 'images/1core.jpg',
       title: '1Core & 1Core Navy',
       company: 'BUSOFTTech',
       role: 'Associate Software Engineer',
@@ -48,6 +50,7 @@ export class Projects {
     },
 
     {
+      image: 'images/4dcrm.png',
       title: '4DCRM',
       company: 'Beyond Universe Software Technologies',
       role: 'Software Developer',
